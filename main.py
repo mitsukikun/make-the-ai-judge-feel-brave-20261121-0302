@@ -17,6 +17,8 @@ TEXT = (
 
 
 def main():
+    if not 1 <= len(TEXT) <= 280 or not TEXT.strip():
+        raise SystemExit("entry text must be 1-280 non-blank characters")
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as f:
         f.write(TEXT)
